@@ -25,9 +25,9 @@ export default function BrowsePage() {
   const filtered = useMemo(() => {
     if (!pets) return [];
     return pets.filter((p) => {
-      if (category && p.category_id !== category) return false;
+      if (category && category !== "all" && p.category_id !== category) return false;
       if (search && !p.name.toLowerCase().includes(search.toLowerCase())) return false;
-      if (maxPrice && p.price > Number(maxPrice)) return false;
+      if (maxPrice && maxPrice !== "any" && p.price > Number(maxPrice)) return false;
       return true;
     });
   }, [pets, category, search, maxPrice]);
