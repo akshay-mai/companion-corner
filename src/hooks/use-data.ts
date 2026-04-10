@@ -103,7 +103,7 @@ export function useCreatePet() {
 export function useUpdatePet() {
   const qc = useQueryClient();
   return useMutation({
-    mutationFn: async ({ id, ...pet }: Partial<Pet> & { id: string }) => {
+    mutationFn: async ({ id, categories, ...pet }: Partial<Pet> & { id: string }) => {
       const { error } = await supabase.from("pets").update(pet).eq("id", id);
       if (error) throw error;
     },
