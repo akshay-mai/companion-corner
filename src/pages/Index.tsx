@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { PawPrint, Heart, Star } from "lucide-react";
+import { PawPrint, Heart, Star, Phone, MapPin, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -31,7 +31,7 @@ export default function Index() {
             className="flex-1 text-center md:text-left"
           >
             <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary">
-              <PawPrint className="h-4 w-4" /> #1 Pet Shop
+              <PawPrint className="h-4 w-4" /> Amazing Pet Wala
             </div>
             <h1 className="text-4xl font-black leading-tight text-foreground md:text-5xl lg:text-6xl">
               Find Your Perfect{" "}
@@ -137,6 +137,53 @@ export default function Index() {
           </div>
         </section>
       )}
+
+      {/* Contact / Location Section */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-10 text-center"
+          >
+            <h2 className="text-3xl font-bold md:text-4xl">
+              Visit <span className="text-primary">Us</span> 📍
+            </h2>
+            <p className="mt-2 text-muted-foreground">Come say hello to our furry friends!</p>
+          </motion.div>
+          <div className="mx-auto max-w-2xl rounded-2xl border border-border bg-card p-8 shadow-cute">
+            <div className="flex flex-col items-center gap-6 text-center">
+              <div className="flex items-start gap-3">
+                <MapPin className="mt-1 h-5 w-5 shrink-0 text-primary" />
+                <div>
+                  <p className="font-semibold text-foreground">Our Location</p>
+                  <p className="text-muted-foreground">Ramesh Nagar Metro Station near Kesar Chai Wala</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <Phone className="h-5 w-5 shrink-0 text-primary" />
+                <div>
+                  <p className="font-semibold text-foreground">Call Us</p>
+                  <p className="text-muted-foreground">+91 85879 44627</p>
+                </div>
+              </div>
+              <div className="flex flex-wrap justify-center gap-3 pt-2">
+                <a href="tel:+918587944627">
+                  <Button variant="outline" size="lg" className="gap-2">
+                    <Phone className="h-4 w-4" /> Call Us
+                  </Button>
+                </a>
+                <a href="https://wa.me/918587944627" target="_blank" rel="noopener noreferrer">
+                  <Button variant="hero" size="lg" className="gap-2 bg-[hsl(142,70%,45%)] hover:bg-[hsl(142,70%,40%)]">
+                    <MessageCircle className="h-4 w-4" /> WhatsApp
+                  </Button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <Footer />
       <EnquiryModal pet={enquiryPet} open={!!enquiryPet} onOpenChange={(o) => !o && setEnquiryPet(null)} />

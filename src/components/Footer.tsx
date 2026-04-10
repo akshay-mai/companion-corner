@@ -6,12 +6,12 @@ export default function Footer() {
       <div className="container mx-auto flex flex-col items-center gap-3 px-4 text-center">
         <div className="flex items-center gap-2 font-display text-lg font-bold text-primary">
           <PawPrint className="h-5 w-5" />
-          PawPals
+          Amazing Pet Wala
         </div>
         <p className="flex items-center gap-1 text-sm text-muted-foreground">
           Made with <Heart className="h-3.5 w-3.5 fill-primary text-primary" /> for pet lovers
         </p>
-        <p className="text-xs text-muted-foreground/60">© 2026 PawPals. All rights reserved.</p>
+        <p className="text-xs text-muted-foreground/60">© 2026 Amazing Pet Wala. All rights reserved.</p>
       </div>
     </footer>
   );

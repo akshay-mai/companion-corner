@@ -18,7 +18,7 @@ export default function Navbar() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link to="/" className="flex items-center gap-2 font-display text-xl font-bold text-primary">
           <PawPrint className="h-7 w-7" />
-          <span>PawPals</span>
+          <span>Amazing Pet Wala</span>
         </Link>
 
         {/* Desktop */}
